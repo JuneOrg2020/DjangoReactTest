@@ -1,0 +1,49 @@
+{
+  "name": "MMX",
+  "version": "1.0.0",
+  "description": "This project is my original test project about Mind Map.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-cli serve --hot --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuneOrg2020/MMX.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuneOrg2020/MMX/issues"
+  },
+  "homepage": "https://github.com/JuneOrg2020/MMX#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "clsx": "^1.1.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "html-webpack-plugin": "^5.3.1",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.27.1",
+    "webpack-bundle-tracker": "^0.4.3",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
