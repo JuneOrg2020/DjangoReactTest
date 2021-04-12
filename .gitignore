@@ -166,3 +166,6 @@ Thumbs.db
 
 # npm
 node_modules/
+
+# docker
+data/
