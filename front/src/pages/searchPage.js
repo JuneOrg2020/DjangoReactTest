@@ -18,6 +18,10 @@ class SearchPage extends Component {
     const { beforeSearchWord, searchWord } = this.props.state.search;
     const { searchOpt } = this.props.state.search;
 
+    if (searchWord.length === 0) {
+      return;
+    }
+
     if (e.key === 'Enter' && beforeSearchWord !== searchWord) {
       this.search(searchOpt);
     }
@@ -30,6 +34,10 @@ class SearchPage extends Component {
   search(opt) {
     const { searchWord } = this.props.state.search;
     const { action } = this.props;
+
+    if (searchWord.length === 0) {
+      return;
+    }
 
     commonFetch({
       uri: `/api/info/search/${opt}/`,

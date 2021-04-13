@@ -83,7 +83,7 @@ const mapView = (state = initialState, action) => {
     return {
       ...state,
       selectedInfo: {
-        id: action.data.mainData.info_id,
+        info_id: action.data.mainData.info_id,
         text: action.data.mainData.text,
       },
       linkInfos: newMapData,

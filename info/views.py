@@ -181,6 +181,11 @@ class SearchInfo(generics.RetrieveAPIView):
     def post(self, request, format=None):
         data=request.data
         try:
+            if 'searchWord' not in data:
+                raise Exception('searchWord is not included in request')
+            if len(data["searchWord"]) == 0 or len(data["searchWord"]) > 200:
+                raise Exception('searchWord length is not incorect')
+
             rowData = self.repository.searchInfo(data["searchWord"], request.user.username)
             return Response(data=rowData,
                 status=status.HTTP_200_OK)
@@ -198,6 +203,10 @@ class SearchLinker(generics.RetrieveAPIView):
     def post(self, request, format=None):
         data=request.data
         try:
+            if 'searchWord' not in data:
+                raise Exception('searchWord is not included in request')
+            if len(data["searchWord"]) == 0 or len(data["searchWord"]) > 200:
+                raise Exception('searchWord length is not incorect')
             rowData = self.repository.searchLinker(data["searchWord"])
             return Response(data=rowData,
                 status=status.HTTP_200_OK)
@@ -214,6 +223,10 @@ class SearchLinkedInfo(generics.RetrieveAPIView):
     def post(self, request, format=None):
         data=request.data
         try:
+            if 'searchWord' not in data:
+                raise Exception('searchWord is not included in request')
+            if len(data["searchWord"]) == 0 or len(data["searchWord"]) > 200:
+                raise Exception('searchWord length is not incorect')
             rowData = self.repository.searchLinkedInfo(data["searchWord"], request.user.username)
             print(rowData)
             return Response(data=rowData,

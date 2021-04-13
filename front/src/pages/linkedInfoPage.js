@@ -31,6 +31,7 @@ class LinkedInfoView extends Component {
   }
 
   addLinker() {
+    const { params } = this.props.match;
     const { action } = this.props;
     const { selectedInfo, selectLinkedInfoId, inputLinker } = this.props.state.linkedInfo;
 
@@ -59,10 +60,12 @@ class LinkedInfoView extends Component {
       },
       successCallback: () => {
         action.openModal('新しいリンクが作成されました');
-        setTimeout(action.closeModal, 1500);
+        setTimeout(() => {
+          action.closeModal();
+          locationTo(`/linkedInfo/${params.id}`);
+        }, 1000);
       },
       errorCallback: (err) => {
-        console.log(err);
         action.openModal('エラーが発生しました');
       },
     });
