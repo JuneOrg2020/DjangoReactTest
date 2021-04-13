@@ -26,8 +26,8 @@
   * __DjangoRestFramework 3.12.4__
 
 * __インフラ__
-  * __Docker 19.03.12 / docker-compose 1.26.2__
-  * __postgresql 5.7.31__
+  * __Docker 20.10.5 / docker-compose 1.28.5__
+  * __postgresql 13.2__
 
 * その他使用ツール
   * Visual Studio Code
