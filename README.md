@@ -33,7 +33,12 @@
 git clone https://github.com/JuneOrg2020/DjangoReactTest.git
 ```
 
-2.  docker ビルドと起動
+2.  移動
+```bash
+cd DjangoReactTest
+```
+
+2.  docker ビルドおよび起動
 ```bash
 docker-compose up --build -d
 ```
