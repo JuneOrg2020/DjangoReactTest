@@ -19,7 +19,7 @@ class InfoRepositorys():
                 A.user_id = %(userId)s
         """,
             {'userId': userId }
-        );
+        )
 
         return rowData
 
@@ -37,7 +37,7 @@ class InfoRepositorys():
                 A.is_stocked = 1
         """,
             {'userId': userId }
-        );
+        )
 
         return rowData
 
@@ -56,7 +56,7 @@ class InfoRepositorys():
             LIMIT 30
         """,
             {'word': '%'+word+'%', 'userId': userId }
-        );
+        )
 
         return rowData
 
@@ -84,7 +84,7 @@ class InfoRepositorys():
             LIMIT 30
         """,
             {'word': '%'+word+'%', 'userId': userId }
-        );
+        )
 
         return rowData
 
@@ -99,7 +99,7 @@ class InfoRepositorys():
             LIMIT 30
         """,
             {'word': '%'+word+'%'}
-        );
+        )
 
         return rowData
 
@@ -117,7 +117,7 @@ class InfoRepositorys():
                 A.info_id = %(id)s
         """,
             {'id': infoId, 'user_id': userId }
-        );
+        )
 
         return rowData
 
@@ -135,7 +135,7 @@ class InfoRepositorys():
                 ) RETURNING info_id
         """,
             {'text': text, 'userId': userId, 'linkedId': linkedId}
-        );
+        )
 
         return rowData
 
@@ -148,7 +148,7 @@ class InfoRepositorys():
                     info_id = %(infoId)s
         """,
             {'infoId': infoId}
-        );
+        )
 
     def getMap(self, infoId, userId, relCount):
 
@@ -224,7 +224,7 @@ class InfoRepositorys():
                 ORDER BY X.linked_count DESC
         """,
             {'info_id': infoId, 'user_id': userId, 'rel_count': relCount}
-        );
+        )
 
         mapData = list()
         mapDataOne = None
@@ -279,7 +279,7 @@ class InfoRepositorys():
                 )
         """,
             {'type': type, 'text': text, 'info1': info1, 'info2': info2, 'userId': userId}
-        );
+        )
 
     def stockInfo(self, infoId, userId, toStockState):
 
@@ -368,7 +368,7 @@ class InfoRepositorys():
         return rowData
 
     def editLinker(self, linkerId, type, text):
-        result = self.manageSQL.executeSQL("""
+        return self.manageSQL.executeSQL("""
             UPDATE linkers
                 SET
                     link_type = %(type)s,
@@ -377,4 +377,4 @@ class InfoRepositorys():
                     linker_id = %(linkerId)s
         """,
             {'linkerId': linkerId, 'type': type, 'text': text}
-        );
+        )

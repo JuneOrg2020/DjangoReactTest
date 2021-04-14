@@ -72,7 +72,7 @@ class AddInfo(generics.CreateAPIView):
             if 'text' not in data:
                 raise Exception('text is not included in request')
             if len(data["text"]) == 0 or len(data["text"]) > 200:
-                raise Exception('text length is not incorect')
+                raise Exception('text length is not correct')
             if 'linkedId' in data:
                 linkedId = data["linkedId"]
                 self.repository.addLinkedCount(linkedId)
@@ -147,6 +147,18 @@ class AddLinker(generics.RetrieveAPIView):
     def post(self, request, format=None):
         data=request.data
         try:
+            if 'type' not in data:
+                raise Exception('type is not included in request')
+            if 'text' not in data:
+                raise Exception('text is not included in request')
+            if 'info1' not in data:
+                raise Exception('info1 is not included in request')
+            if 'info2' not in data:
+                raise Exception('info2 is not included in request')
+
+            if len(data["text"]) == 0 or len(data["text"]) > 200:
+                raise Exception('text length is not correct')
+
             self.repository.addLinker(data["type"], data["text"],
                                       data["info1"], data["info2"],
                                       request.user.username)
@@ -165,6 +177,11 @@ class StockInfo(generics.CreateAPIView):
     def post(self, request, format=None):
         data=request.data
         try:
+            if 'infoId' not in data:
+                raise Exception('infoId is not included in request')
+            if 'toStockState' not in data:
+                raise Exception('toStockState is not included in request')
+
             count = self.repository.stockInfo(data["infoId"], request.user.username, data["toStockState"])
             return Response(data={},
                 status=status.HTTP_200_OK)
@@ -184,7 +201,7 @@ class SearchInfo(generics.RetrieveAPIView):
             if 'searchWord' not in data:
                 raise Exception('searchWord is not included in request')
             if len(data["searchWord"]) == 0 or len(data["searchWord"]) > 200:
-                raise Exception('searchWord length is not incorect')
+                raise Exception('searchWord length is not correct')
 
             rowData = self.repository.searchInfo(data["searchWord"], request.user.username)
             return Response(data=rowData,
@@ -206,7 +223,7 @@ class SearchLinker(generics.RetrieveAPIView):
             if 'searchWord' not in data:
                 raise Exception('searchWord is not included in request')
             if len(data["searchWord"]) == 0 or len(data["searchWord"]) > 200:
-                raise Exception('searchWord length is not incorect')
+                raise Exception('searchWord length is not correct')
             rowData = self.repository.searchLinker(data["searchWord"])
             return Response(data=rowData,
                 status=status.HTTP_200_OK)
@@ -226,7 +243,7 @@ class SearchLinkedInfo(generics.RetrieveAPIView):
             if 'searchWord' not in data:
                 raise Exception('searchWord is not included in request')
             if len(data["searchWord"]) == 0 or len(data["searchWord"]) > 200:
-                raise Exception('searchWord length is not incorect')
+                raise Exception('searchWord length is not correct')
             rowData = self.repository.searchLinkedInfo(data["searchWord"], request.user.username)
             print(rowData)
             return Response(data=rowData,
@@ -281,7 +298,20 @@ class EditLinkerData(generics.CreateAPIView):
 
     def post(self, request, format=None):
         data = request.data
+        print(data)
         try:
+            if 'linkerId' not in data:
+                raise Exception('linkerId is not included in request')
+            if 'type' not in data:
+                raise Exception('type is not included in request')
+            if 'text' not in data:
+                raise Exception('text is not included in request')
+
+            if len(data["text"]) == 0 or len(data["text"]) > 200:
+                raise Exception('text length is not correct')
+
+            if data["type"] not in (0, 1, 2):
+                raise Exception('linkerType is not correct')
             count = self.repository.editLinker(data["linkerId"], data["type"], data["text"])
             return Response(data={},
                             status=status.HTTP_200_OK)
