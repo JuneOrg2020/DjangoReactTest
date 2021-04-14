@@ -29,22 +29,22 @@
 
 ### ローカル環境でのデプロイ
 1.  git clone
-```bash
+```terminal
 git clone https://github.com/JuneOrg2020/DjangoReactTest.git
 ```
 
 2.  移動
-```bash
+```terminal
 cd DjangoReactTest
 ```
 
 2.  docker ビルドおよび起動
-```bash
+```terminal
 docker-compose up --build -d
 ```
 
 3.  初期データ投入
-```bash
+```terminal
 docker-compose exec -T db pg_restore -cO -d postgres -U postgres -w < sampleData
 ```
 
