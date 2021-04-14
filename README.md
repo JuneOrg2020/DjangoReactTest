@@ -7,9 +7,9 @@
 情報と情報を紐づける「Linker」も定義できます<br>
 
 ## 使用画面のイメージ
-![ScreenShot_Diagram (1)](https://user-images.githubusercontent.com/64642177/114655392-1a921a00-9d27-11eb-9b0d-abd03692727e.png)
-![ScreenShot_Diagram (2)](https://user-images.githubusercontent.com/64642177/114655401-1d8d0a80-9d27-11eb-9ff9-f9792c0bfeca.png)
-![ScreenShot_Diagram (3)](https://user-images.githubusercontent.com/64642177/114655405-1f56ce00-9d27-11eb-8468-b9d22d9e2bcf.png)
+![ScreenShot_Diagram (1)](https://user-images.githubusercontent.com/64642177/114655831-f7b43580-9d27-11eb-8258-310be2427e16.png)
+![ScreenShot_Diagram (2)](https://user-images.githubusercontent.com/64642177/114655843-fbe05300-9d27-11eb-8404-8a294bda84da.png)
+![ScreenShot_Diagram (3)](https://user-images.githubusercontent.com/64642177/114655859-ff73da00-9d27-11eb-923b-075484a9ac95.png)
 
 ## 使用技術
 
