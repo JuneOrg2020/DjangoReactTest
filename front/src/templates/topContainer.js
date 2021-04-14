@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import reducer from '../reducers';
+import rootSaga from '../saga/rootSaga';
 import PersistentDrawerLeft from './drawer';
 import InputData from '../pages/inputDataPage';
 import MapView from '../pages/mapViewPage';
@@ -17,7 +19,14 @@ import Login from '../pages/loginPage';
 import Logout from '../pages/logoutPage';
 import Modal from '../pages/modal';
 
-const store = createStore(reducer);
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(
+  reducer,
+  applyMiddleware(sagaMiddleware),
+);
+
+sagaMiddleware.run(rootSaga);
 
 class TopContainer extends PureComponent {
   render() {

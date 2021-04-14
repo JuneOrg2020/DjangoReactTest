@@ -11,6 +11,9 @@ import { commonFetch, locationTo } from '../modules/common';
 class InputData extends Component {
   onChange(e) {
     const { action } = this.props;
+    if (e.target.value.length === 0) {
+      return;
+    }
     action.setText(e.target.value);
   }
 
