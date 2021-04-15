@@ -11,6 +11,7 @@
 * __フロントエンド__
   * __React.js 17.0.1__
   * __redux 4.0.5__
+  * __redux-saga 1.1.3__
   * __material-ui/core 4.11.3__
   * __eslint 7.22.0__
 
