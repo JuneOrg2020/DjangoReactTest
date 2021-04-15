@@ -169,3 +169,7 @@ node_modules/
 
 # docker
 data/
+
+# jest
+
+front/test/__snapshots__/

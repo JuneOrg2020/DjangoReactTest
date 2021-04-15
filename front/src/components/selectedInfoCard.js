@@ -18,7 +18,7 @@ class SelectedInfoCard extends PureComponent {
       marginTop: '4px',
       marginRight: '3px',
     };
-    console.log(info);
+
     return (
       <InfoCard
         isSelected={isSelected}
