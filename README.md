@@ -14,6 +14,7 @@
   * __redux-saga 1.1.3__
   * __material-ui/core 4.11.3__
   * __eslint 7.22.0__
+  * __jest 26.6.3__
 
 * __バックエンド__
   * __Python 3.8.2__
