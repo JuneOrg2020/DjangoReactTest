@@ -66,8 +66,8 @@ localhost:8000にアクセスし、以下の情報からログインする<br>
 
 ## 使用画面のイメージ
 「りんご」の関連情報 <br>
-![ScreenShot_Diagram (1)](https://user-images.githubusercontent.com/64642177/114655831-f7b43580-9d27-11eb-8258-310be2427e16.png)<br>
+<img src="https://user-images.githubusercontent.com/64642177/114655831-f7b43580-9d27-11eb-8258-310be2427e16.png" width=600><br>
 「OtherInfo」をクリック <br>
-![ScreenShot_Diagram (2)](https://user-images.githubusercontent.com/64642177/114655843-fbe05300-9d27-11eb-8404-8a294bda84da.png)<br>
+<img src="https://user-images.githubusercontent.com/64642177/114655843-fbe05300-9d27-11eb-8404-8a294bda84da.png" width=600><br>
 「万有引力」を選択 <br>
-![ScreenShot_Diagram (3)](https://user-images.githubusercontent.com/64642177/114655859-ff73da00-9d27-11eb-923b-075484a9ac95.png)
+<img src="https://user-images.githubusercontent.com/64642177/114655859-ff73da00-9d27-11eb-923b-075484a9ac95.png" width=600><br>
